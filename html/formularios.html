@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formularios</title>
+</head>
+<body>
+<form>
+    <!--  Exemplos de Inputs -->
+    <input type="text" placeholder="Digite Algo"><br>
+    <input type="radio"><br>
+    <input type="checkbox"><br>
+    <input type="submit"><br>
+    <input type="button" value="BOTÃO"><br>
+    <br><br>
+
+ <!--  Text Fields -->
+    <label for="firstname">First Name</label>
+    <br>
+    <input type="text" id="fname" name="firstname" placeholder="first name...">
+    <br>
+    <label for="lastname">Last Name</label>
+    <br>
+    <input type="text" id="lname" name="lastname" placeholder="last name...">
+    <br><br>
+
+ <!--Tag Label-->
+    <div>
+        <label for="name:">Nome:</label><br>
+        <input type="text" placeholder="Insira seu nome:" name="name" required>
+    </div>
+    <div>
+        <label for="name2:">Sobrenome:</label><br>
+        <input type="text" placeholder="Insira seu sobrenome:" name="name2" required>
+    </div>
+    <div>
+        <label for="age:">Idade:</label><br>
+        <input type="number" placeholder="Insira sua idade:" name="age" min="0" max="110" value="0" required>
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+    <br><br>
+
+<!-- Radio Button: só pode escolher um: mesmo name-->
+    <input type="radio" name="pais" value="BRAZIL" checked>
+    <label for="br">Brazil</label> <br>
+    <input type="radio" name="pais" value="USA">
+    <label for="usa">USA</label> <br>
+    <input type="radio" name="pais" value="CANADA">
+    <label for="br">Canadá</label>
+    <br><br>
+
+<!-- Checkbox: pode escolher varios -->
+    <input type="checkbox"  name="option" value="AIRCONDITIONING">
+    <label for="aircond">Air Conditioning</label> <br>
+    <input type="checkbox"  name="option" value="MEDIA SYSTEM">
+    <label for="midsys">Media System</label> <br>
+    <input type="checkbox" name="option" value="CAMERA">
+    <label for="camera">Camera</label>
+    <br><br>
+
+<!-- label o for tem que ser igual ao id do input-->
+    <label for="primeironome">Primeiro Nome: </label>
+    <input type="text" id="primeironome" name="primeironome">
+    <br><br>
+
+<!-- Select -->
+    <label for="cidade">Cidade: </label>
+    <select name="cidade" id="cidade">
+        <option value="fortaleza" select>Fortaleza</option>
+        <option value="itapipoca" select>Itapipoca</option>
+        <option value="fortim" select>Fortim</option>
+        <option value="mutambeiras" select>Mutambeiras</option>
+    </select>
+    <input type="submit" value="ENVIAR">
+    <br><br>
+
+<!-- Textarea tem que colocar as linhas e colunas para que se crie a interface-->
+    <textarea name="textarea" cols="30" rows="10" placeholder="insira aqui o seu lacre"></textarea>
+    <br><br>
+    <input type="submit" value="Lacrar">
+    <br><br>
+
+<!-- Button > alert cria um popout -->
+    <button type="button" 
+    onclick="alert('Olá Mundo!')">Clique!</button>
+    <br><br>
+
+<!-- Fieldset cria um agrupamento dos dados / legend é a legenda/titulo do fieldset -->
+    <fieldset>
+        <legend>Manual do Lacre <br></legend>
+
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" placeholder="Insira seu Nome"> <br>
+
+        <label for="email">Alvo:</label>
+        <input type="text" name="email" id="email" placeholder="Insira o nome do lacrado"> <br>
+
+        <label for="lacre">Mensagem:</label>
+        <br>
+        <textarea name="lacre" cols="30" rows="10" placeholder="insira aqui o seu lacre"></textarea>
+        <br><br>
+        <input type="submit" value="Lacrar">
+    </fieldset>
+    <br><br>
+
+<!-- Datalist: cria opçoes de preenchimento  o ID tem que ser igual ao nome do input-->
+    <input type="text" list="nomes" name="nomes">
+    <datalist id="nomes">
+        <option value="Breno"></option>
+        <option value="Bruno"></option>
+        <option value="Beatriz"></option>
+        <option value="Adriana"></option>
+        <option value="Hannah"></option>
+    </datalist>
+    <br><br>
+</form>
+
+<!-- output  -->
+<form action="/result.htlm" oninput="res.value= parseFloat(x.value) + parseFloat(y.value)">
+<input type="number" id="x" name="x" value="0">
++
+<input type="number" id="y" name="y" value="0">
+=
+<output name="res" for="x+y"></output>
+<br><br>
+<button type="submit">Calcular</button>
+
+</form>
+</body>
+</html>
